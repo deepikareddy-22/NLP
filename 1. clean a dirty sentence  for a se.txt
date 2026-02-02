@@ -1,0 +1,80 @@
+1. clean a dirty sentence  for a search engine tokenize the sentence normalize it and remove stopword  
+"The quick,BROWN foxes they are JUMPING over 10 lazy dogs!"
+["quick", "brown","fox","lazi","dog"]
+
+2. Calculate the repair cost between two words with out using a computer "START" and "STARE"
+["Win","cash","free"]
+i/p : "you are Winning a free prize now!"
+o/p :  True, False.
+
+Answers:
+1. a) Tokenization
+Split the sentence into words.
+
+["The","quick","BROWN","foxes","they","are","JUMPING","over","10","lazy","dogs"]
+
+
+b) Normalization
+
+Convert to lowercase
+
+Remove numbers & punctuation
+
+
+["the","quick","brown","fox","they","are","jump","over","lazy","dog"]
+
+
+c) Stopword Removal
+Remove common words like the, they, are, over.
+
+ Final Output:
+["quick", "brown", "fox", "lazi", "dog"]
+
+
+2.) We calculate minimum edit distance (insert, delete, substitute).
+
+Comparison:
+START
+STARE
+
+
+S → S 
+
+T → T 
+
+A → A 
+
+R → R 
+
+T → E  (Substitution)
+
+Repair Cost:
+1
+
+
+(Only one substitution needed)
+
+ Keyword matching (Spam / Promotion detection)
+
+Keywords list:
+
+["Win", "cash", "free"]
+
+
+Input sentence:
+
+“you are Winning a free prize now!”
+
+Step 1: Normalize sentence
+["you","are","winning","a","free","prize","now"]
+
+Step 2: Match keywords
+
+Win → matches Winning → True
+
+cash → not present →  False
+
+free → present →  True
+
+ Output:
+True, False, True
